@@ -1,13 +1,7 @@
 <img src="./img/header.gif" width="100%" />
 
-💻 [Language] JavaScript, TypeScript
+💻 [Language] TypeScript, JavaScript
 
-🖼 [Library] React, Redux, Next.js, Styled-Components, SCSS
+🖼 [Library] React.js, Next.js
 
-📚 [Experience - Stack] Node.js, Express, Koa, GraphQL, MongoDB, MYSQL
-
-📚 [Experience - CI/CD] AWS - S3, AWS - EC2, Netlify, Heroku
-
-👨‍💻 [Working Tools] Github, Jira, Confluence, Slack, Notion, Zeplin
-
-🎨 [Design Tools] Adobe Tool, ProtoPie, Sketch, Figma
+👨‍💻 [Working With] Git, Slack, Jira, Confluence, Notion, Figma
