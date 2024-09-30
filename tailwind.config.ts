@@ -8,6 +8,16 @@ const config: Config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      fontSize: {
+        'main-section': 'calc(1rem + 4vw)',
+      },
+      keyframes: {
+        mainGoUp: {
+          '0%': { transform: 'rotate(90deg)' },
+          '20%': { transform: 'rotate(90deg) translateX(100px)' },
+          '100%': { transform: 'rotate(90deg) translateX(-3000px)' },
+        },
+      },
     },
   },
   plugins: [],
