@@ -53,10 +53,24 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex h-full">
-      <canvas ref={canvasRef} id="canvas" className="pointer-events-none w-full h-full absolute top-0 left-0 z-10"></canvas>
-      <div className="flex justify-center items-center w-1/4 h-full bg-[var(--main-background-1)]">
-        <div className="pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-1)]">{`HOON JEONG'S`}</div>
+    <main className={`flex h-full ${link ? `animate-[fadeOut_1.5s_ease-in-out_forwards]` : null}`}>
+      {/* <canvas ref={canvasRef} id="canvas" className="pointer-events-none w-full h-full absolute top-0 left-0 z-10"></canvas> */}
+      <div className="flex flex-col justify-center items-center w-1/4 h-full bg-[var(--main-background-1)]">
+        <div
+          style={{ width: '100vh' }}
+          className="overflow-hidden flex relative pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-1)]"
+        >
+          <div style={{ flex: `0 0 100%` }} className="group flex will-change-transform animate-[scrolling_5s_linear_infinite]">
+            <div className="mr-4">{`🏄 Hi There!,`}</div>
+            <div className="mr-4">{`I'm Hoon Jeong.`}</div>
+            <div className="mr-4">{`Welcome to my personal site. 🍹`}</div>
+          </div>
+          <div style={{ flex: `0 0 100%` }} className="group flex will-change-transform animate-[scrolling_5s_linear_infinite]">
+            <div className="mr-4">{`🏄 Hi There!,`}</div>
+            <div className="mr-4">{`I'm Hoon Jeong.`}</div>
+            <div className="mr-4">{`Welcome to my personal site. 🍹`}</div>
+          </div>
+        </div>
       </div>
       <div
         onClick={() => handleLinkClick('/about-me')}

@@ -9,13 +9,21 @@ const config: Config = {
         foreground: 'var(--foreground)',
       },
       fontSize: {
-        'main-section': 'calc(1rem + 4vw)',
+        'main-section': 'calc(1rem + 6vw)',
       },
       keyframes: {
         mainGoUp: {
           '0%': { transform: 'rotate(90deg)' },
           '20%': { transform: 'rotate(90deg) translateX(100px)' },
           '100%': { transform: 'rotate(90deg) translateX(-3000px)' },
+        },
+        fadeOut: {
+          '65%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
+        scrolling: {
+          '0%': { transform: `translateX(0%)` },
+          '100%': { transform: `translateX(-100%)` },
         },
       },
     },
