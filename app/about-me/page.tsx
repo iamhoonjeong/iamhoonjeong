@@ -1,3 +1,9 @@
+import Header from '@/src/ui/Header';
+
 export default function About() {
-  return <div>about</div>;
+  return (
+    <main>
+      <Header title="ABOUT ME" />
+    </main>
+  );
 }
