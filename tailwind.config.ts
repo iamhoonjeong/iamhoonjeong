@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       animation: {
         roll: 'headerRolling 3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        opacity: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
       colors: {
         background: 'var(--background)',
@@ -20,6 +21,10 @@ const config: Config = {
         'main-section': 'calc(1rem + 6vw)',
       },
       keyframes: {
+        opacity: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
         mainClick: {
           '0%': { transform: 'rotate(90deg)' },
           '20%': { transform: 'rotate(90deg) translateX(100px)' },

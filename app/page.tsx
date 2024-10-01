@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { detectMobile } from '@/src/lib/detectMobile';
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -39,9 +40,13 @@ export default function Home() {
     if (link !== '') return;
 
     setLink(path);
-    setTimeout(() => {
+    if (detectMobile()) {
       router.push(path);
-    }, 1500);
+    } else {
+      setTimeout(() => {
+        router.push(path);
+      }, 1500);
+    }
   }
 
   useEffect(() => {
@@ -53,7 +58,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={`flex h-full ${link ? `animate-[mainFadeOut_1.5s_ease-in-out_forwards]` : null}`}>
+    <main className={`overflow-hidden flex h-full ${link ? `animate-[mainFadeOut_1.5s_ease-in-out_forwards]` : null}`}>
       {/* <canvas ref={canvasRef} id="canvas" className="pointer-events-none w-full h-full absolute top-0 left-0 z-10"></canvas> */}
       <div className="flex flex-col justify-center items-center w-1/4 h-full bg-[var(--main-background-1)]">
         <div

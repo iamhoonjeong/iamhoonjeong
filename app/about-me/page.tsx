@@ -3,7 +3,7 @@ import Header from '@/src/ui/Header';
 export default function About() {
   return (
     <main>
-      <Header title="ABOUT ME" />
+      <Header order={2} title="ABOUT ME" />
     </main>
   );
 }
