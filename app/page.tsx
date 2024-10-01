@@ -58,16 +58,17 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={`overflow-hidden flex h-full ${link ? `animate-[mainFadeOut_1.5s_ease-in-out_forwards]` : null}`}>
+    <main className={`overflow-hidden flex h-full ${link ? `animate-mainFadeOut` : null}`}>
       {/* <canvas ref={canvasRef} id="canvas" className="pointer-events-none w-full h-full absolute top-0 left-0 z-10"></canvas> */}
       <div className="flex flex-col justify-center items-center w-1/4 h-full bg-[var(--main-background-1)]">
         <div
           style={{ width: '100vh' }}
           className="overflow-hidden flex relative pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-1)]"
         >
-          <div className="flex animate-[mainScrolling_15s_linear_infinite] will-change-transform">
+          <div className="flex animate-mainIntroduceInfiniteSlide will-change-transform">
             <div className="mr-8 -rotate-90">{`🏄`}</div>
-            <div className="mr-8">{`Hi, This is Hoon.`}</div>
+            <div className="mr-8">{`Hi, This is `}</div>
+            <div className="mr-8 animate-[opacity_1s_linear_infinite]">{`Hoon.`}</div>
             <div className="mr-8 -rotate-90">{`😎`}</div>
             <div className="mr-8">{`Feel free to reach out to me.`}</div>
             <div className="mr-8 -rotate-90">{`💕`}</div>
@@ -80,7 +81,7 @@ export default function Home() {
       >
         <div
           className={`${
-            link === '/about-me' ? `animate-[mainClick_1.5s_ease-in-out_forwards]` : null
+            link === '/about-me' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
           } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-2)]`}
         >
           ABOUT ME
@@ -92,7 +93,7 @@ export default function Home() {
       >
         <div
           className={`${
-            link === '/career' ? `animate-[mainClick_1.5s_ease-in-out_forwards]` : null
+            link === '/career' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
           } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-3)]`}
         >
           CAREER
@@ -104,7 +105,7 @@ export default function Home() {
       >
         <div
           className={`${
-            link === '/blog' ? `animate-[mainClick_1.5s_ease-in-out_forwards]` : null
+            link === '/blog' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
           } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-4)]`}
         >
           BLOG

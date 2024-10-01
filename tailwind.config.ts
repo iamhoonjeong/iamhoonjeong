@@ -9,10 +9,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      animation: {
-        roll: 'headerRolling 3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        opacity: 'opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
@@ -20,27 +16,41 @@ const config: Config = {
       fontSize: {
         'main-section': 'calc(1rem + 6vw)',
       },
+      animation: {
+        mainIntroduceInfiniteSlide: 'mainInfiniteSlide 15s linear infinite',
+        mainSectionsShaking: 'mainShaking 15s ease-in-out infinite',
+        mainSectionSlide: 'mainSectionSlide 1.5s ease-in-out forwards',
+        mainFadeOut: 'mainFadeOut 1.5s ease-in-out forwards',
+        headerIntroMoving: 'headerMoving 3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        headerIntroFadeIn: 'headerFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+      },
       keyframes: {
-        opacity: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        mainInfiniteSlide: {
+          '0%': { transform: `translateX(110vh)` },
+          '100%': { transform: `translateX(-100%)` },
         },
-        mainClick: {
+        mainSectionSlide: {
           '0%': { transform: 'rotate(90deg)' },
           '20%': { transform: 'rotate(90deg) translateX(100px)' },
           '100%': { transform: 'rotate(90deg) translateX(-3000px)' },
+        },
+        mainShaking: {
+          '0%': { transform: 'rotate(90deg)' },
+          '2%': { transform: 'rotate(95deg)' },
+          '4%': { transform: 'rotate(85deg)' },
+          '6%': { transform: 'rotate(90deg)' },
         },
         mainFadeOut: {
           '65%': { opacity: '1' },
           '100%': { opacity: '0' },
         },
-        mainScrolling: {
-          '0%': { transform: `translateX(110vh)` },
-          '100%': { transform: `translateX(-100%)` },
-        },
-        headerRolling: {
+        headerMoving: {
           '0%': { transform: 'translateX(110vw)' },
           '100%': { transform: 'translateX(0%)' },
+        },
+        headerFadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
     },
