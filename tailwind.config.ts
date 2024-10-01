@@ -14,7 +14,11 @@ const config: Config = {
         foreground: 'var(--foreground)',
       },
       fontSize: {
-        'main-section': 'calc(1rem + 6vw)',
+        'main-section': 'calc(1rem + 6dvw)',
+      },
+      height: {
+        sectionFirstSectionDesktop: 'calc(100dvh - 5rem)',
+        sectionFirstSectionMobile: 'calc(100dvh - 4rem)',
       },
       animation: {
         mainIntroduceInfiniteSlide: 'mainInfiniteSlide 15s linear infinite',
@@ -26,7 +30,7 @@ const config: Config = {
       },
       keyframes: {
         mainInfiniteSlide: {
-          '0%': { transform: `translateX(110vh)` },
+          '0%': { transform: `translateX(110dvh)` },
           '100%': { transform: `translateX(-100%)` },
         },
         mainSectionSlide: {
@@ -45,7 +49,7 @@ const config: Config = {
           '100%': { opacity: '0' },
         },
         headerMoving: {
-          '0%': { transform: 'translateX(110vw)' },
+          '0%': { transform: 'translateX(110dvw)' },
           '100%': { transform: 'translateX(0%)' },
         },
         headerFadeIn: {
