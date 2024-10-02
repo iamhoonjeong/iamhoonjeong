@@ -82,7 +82,7 @@ export default function About() {
           />
         </div>
       </section>
-      <section className="flex flex-col items-center justify-center bg-[var(--main-background-4)] h-dvh">
+      <section style={{ height: '100vh' }} className="flex flex-col items-center justify-center bg-[var(--main-background-4)]">
         <div className="z-10">
           <div className="z-10 mt-2 mb-6 sm:mt-4 font-black text-2xl sm:text-4xl text-[var(--main-font-color-1)] text-center">
             {`I always consider`}

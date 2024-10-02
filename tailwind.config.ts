@@ -17,8 +17,8 @@ const config: Config = {
         'main-section': 'calc(1rem + 6dvw)',
       },
       height: {
-        sectionFirstSectionDesktop: 'calc(100dvh - 5rem)',
-        sectionFirstSectionMobile: 'calc(100dvh - 4rem)',
+        sectionFirstSectionDesktop: 'calc(100vh - 5rem)',
+        sectionFirstSectionMobile: 'calc(100vh - 4rem)',
       },
       animation: {
         mainIntroduceInfiniteSlide: 'mainInfiniteSlide 15s linear infinite',
@@ -32,7 +32,7 @@ const config: Config = {
       },
       keyframes: {
         mainInfiniteSlide: {
-          '0%': { transform: `translateX(110dvh)` },
+          '0%': { transform: `translateX(110vh)` },
           '100%': { transform: `translateX(-100%)` },
         },
         mainSectionSlide: {
