@@ -28,9 +28,9 @@ export default function About() {
     });
   }, []);
   return (
-    <main className="animate-headerIntroFadeIn overflow-x-hidden">
+    <main className="animate-headerIntroFadeIn">
       <Header order={2} title="ABOUT ME" />
-      <section className="overflow-hidden flex flex-col items-center bg-[var(--main-background-3)] h-sectionFirstSectionMobile sm:h-sectionFirstSectionDesktop">
+      <section className="w-full overflow-hidden flex flex-col items-center bg-[var(--main-background-3)] h-sectionFirstSectionMobile sm:h-sectionFirstSectionDesktop">
         <div className="mt-8 sm:mt-6 flex z-10">
           <Link href={'https://www.linkedin.com/in/iamhoonjeong/'} rel="noopener noreferrer" target="_blank">
             <Image className="w-10 mr-3" src="/logo-linkedin.svg" width={0} height={0} alt="LOGO HOON JEONG" />
@@ -82,7 +82,7 @@ export default function About() {
           />
         </div>
       </section>
-      <section className="overflow-hidden flex flex-col items-center justify-center bg-[var(--main-background-4)] h-dvh">
+      <section className="flex flex-col items-center justify-center bg-[var(--main-background-4)] h-dvh">
         <div className="z-10">
           <div className="z-10 mt-2 mb-6 sm:mt-4 font-black text-2xl sm:text-4xl text-[var(--main-font-color-1)] text-center">
             {`I always consider`}
@@ -93,7 +93,7 @@ export default function About() {
             <br />
             {`Cutting-Edge Technology`}
           </div>
-          <div className="w-full h-full rounded-2xl overflow-hidden mb-10">
+          <div className="w-full h-full rounded-2xl mb-10">
             <ReactPlayer width={'100%'} height={'100%'} controls={true} url="https://www.youtube.com/watch?v=SPjvGKNdMpo" />
           </div>
         </div>
