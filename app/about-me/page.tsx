@@ -10,6 +10,7 @@ export default function About() {
   const circleRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const imageRef2 = useRef<HTMLImageElement>(null);
+  const imageRef3 = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     if (window) {
@@ -21,10 +22,11 @@ export default function About() {
       setCircleMargin(window.innerHeight - circleWidth / 2);
     });
     window.addEventListener('scroll', () => {
-      if (!imageRef.current || !imageRef2.current) return;
+      if (!imageRef.current || !imageRef2.current || !imageRef3.current) return;
       const leftScroll = document.documentElement.scrollHeight - window.innerHeight;
       imageRef.current.style.transform = `rotate(${3.6 * (window.scrollY / leftScroll) * 100}deg)`;
       imageRef2.current.style.transform = `rotate(${-3.6 * (window.scrollY / leftScroll) * 100}deg)`;
+      imageRef3.current.style.transform = `rotate(${-3.6 * (window.scrollY / leftScroll) * 100}deg)`;
     });
   }, []);
   return (
@@ -65,6 +67,14 @@ export default function About() {
           className="overflow-hidden absolute flex top-0 rounded-full bg-[var(--main-background-4)]"
         >
           <Image
+            ref={imageRef3}
+            className="absolute w-full h-full"
+            src="/images/icon-inside-circle.svg"
+            width={50}
+            height={50}
+            alt="LOGO HOON JEONG"
+          />
+          <Image
             ref={imageRef}
             className="absolute w-full h-full"
             src="/images/text-inside-circle.svg"
@@ -90,8 +100,18 @@ export default function About() {
           <br />
           {`Cutting-Edge Technology`}
         </div>
-        <div className="w-3/4 max-w-2xl h-1/2 shadow-xl overflow-hidden rounded-2xl">
-          <ReactPlayer width={'100%'} height={'100%'} controls={true} url="https://www.youtube.com/watch?v=SPjvGKNdMpo" />
+        <div className="w-4/5 relative max-w-2xl h-1/2 shadow-xl">
+          <Image
+            style={{ width: '100px', height: '100px', left: '-50px', top: '-50px' }}
+            className="absolute w-full h-full animate-bounce"
+            src="/images/icon-inside-circle.svg"
+            width={0}
+            height={0}
+            alt="LOGO HOON JEONG"
+          />
+          <div className=" overflow-hidden rounded-2xl w-full h-full">
+            <ReactPlayer width={'100%'} height={'100%'} controls={true} url="https://www.youtube.com/watch?v=SPjvGKNdMpo" />
+          </div>
         </div>
       </section>
     </main>
