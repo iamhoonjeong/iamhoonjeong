@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ReactPlayer from 'react-player';
@@ -7,27 +7,18 @@ import ReactPlayer from 'react-player';
 import Header from '@/src/ui/Header';
 
 export default function AboutMe() {
-  const [circlePositionTop, setCirclePositionTop] = useState(0);
   const circleRef = useRef<HTMLDivElement>(null);
   const imageInsideCircle = useRef<HTMLImageElement>(null);
   const imageTextInsideCircle = useRef<HTMLImageElement>(null);
   const imageTextInsideCircle2 = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    calcCirclePosition();
-    window.addEventListener('resize', calcCirclePosition);
     window.addEventListener('scroll', calcRotateInsideCircleImage);
 
     return () => {
-      window.removeEventListener('resize', calcCirclePosition);
       window.removeEventListener('scroll', calcRotateInsideCircleImage);
     };
   }, []);
-
-  function calcCirclePosition() {
-    const circleWidth = circleRef.current?.clientWidth as number;
-    setCirclePositionTop(window.innerHeight - circleWidth / 2);
-  }
 
   function calcRotateInsideCircleImage() {
     if (!imageInsideCircle.current || !imageTextInsideCircle.current || !imageTextInsideCircle2.current) return;
@@ -41,8 +32,8 @@ export default function AboutMe() {
   return (
     <main className="overflow-hidden animate-fadeIn text-center">
       <Header categoryOrder="category2" title="ABOUT ME" />
-      <section className="w-full h-sectionWithoutHeaderMobile sm:h-sectionWithoutHeaderDesktop flex flex-col items-center bg-category3 overflow-hidden">
-        <div className="mt-8 sm:mt-6 flex z-10">
+      <section className="w-full flex flex-col items-center bg-category3 pt-6 pb-6 sm:pb-10 overflow-hidden">
+        <div className="flex z-10">
           <Link href={'https://www.linkedin.com/in/iamhoonjeong/'} rel="noopener noreferrer" target="_blank">
             <Image className="w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
           </Link>
@@ -52,7 +43,7 @@ export default function AboutMe() {
         </div>
         <div className="text-2xl sm:text-4xl text-category2 font-black mt-4 sm:mt-6 z-10">Hi, This is</div>
         <Image
-          className="w-52 sm:w-72 mt-4 sm:mt-6 animate-sectionTitleShaking z-10"
+          className="w-52 sm:w-72 mt-2 sm:mt-4 animate-sectionTitleShaking z-10"
           src="/images/title-my-name.svg"
           width={100}
           height={100}
@@ -69,8 +60,8 @@ export default function AboutMe() {
         </div>
         <div
           ref={circleRef}
-          style={{ top: circlePositionTop, width: '75dvw', height: '75dvw', maxWidth: '45dvh', maxHeight: '45dvh' }}
-          className="absolute flex bg-category4 rounded-full overflow-hidden"
+          style={{ width: '80dvw', height: '80dvw', maxWidth: '460px', maxHeight: '460px' }}
+          className="relative bg-category4 rounded-full overflow-hidden mt-4 sm:mt-6"
         >
           <Image
             ref={imageInsideCircle}
@@ -97,14 +88,15 @@ export default function AboutMe() {
             alt="text image 2 inside circle"
           />
         </div>
-      </section>
-      <section className="h-dvh flex flex-col justify-end items-center bg-category4 pb-14 overflow-hidden">
-        <div className="text-2xl sm:text-4xl font-black text-category1 mt-2 mb-6 sm:mt-4 z-10">
+        <div className="text-2xl sm:text-4xl font-black text-category1 mt-2 sm:mt-4 z-10">
           <div>{`I always consider`}</div>
           <div>{`UserFlow, Creative,`}</div>
           <div>{`Cutting-Edge Technology`}</div>
         </div>
-        <div className="w-4/5 h-1/2 max-w-2xl relative z-10">
+        <div
+          style={{ width: '80dvw', height: '80dvw', maxWidth: '800px', maxHeight: '460px' }}
+          className="relative mt-2 sm:mt-4 z-10"
+        >
           <Image
             style={{ width: '100px', height: '100px', left: '-50px', top: '-50px' }}
             className="w-full h-full absolute animate-bounce"

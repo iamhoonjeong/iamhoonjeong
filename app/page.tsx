@@ -1,17 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { detectMobile } from '@/src/lib/detectMobile';
 
 export default function Home() {
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const [pathForFunction, setPathForFunction] = useState('');
 
   function onClickCategory(path: string) {
     if (pathForFunction !== '') return;
     setPathForFunction(path);
 
-    if (detectMobile()) {
+    if (isMobile) {
       router.push(path);
     } else {
       setTimeout(() => {
@@ -20,6 +21,11 @@ export default function Home() {
     }
   }
 
+  useEffect(() => {
+    setIsMobile(detectMobile());
+  }, []);
+
+  if (isMobile === null) return;
   return (
     <main className={`overflow-hidden flex h-full ${pathForFunction ? `animate-fadeOut` : null}`}>
       <div className="w-1/4 h-full flex flex-col justify-center items-center bg-category1">
