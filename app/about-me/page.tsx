@@ -82,20 +82,16 @@ export default function About() {
           />
         </div>
       </section>
-      <section className="flex flex-col items-center justify-center bg-[var(--main-background-4)] h-dvh pb-10">
-        <div className="z-10">
-          <div className="z-10 mt-2 mb-6 sm:mt-4 font-black text-2xl sm:text-4xl text-[var(--main-font-color-1)] text-center">
-            {`I always consider`}
-            <br />
-            {`UserFlow, Creative,`}
-            <br />
-            {`and`}
-            <br />
-            {`Cutting-Edge Technology`}
-          </div>
-          <div className="overflow-hidden w-full h-full rounded-2xl">
-            <ReactPlayer width={'100%'} height={'100%'} controls={true} url="https://www.youtube.com/watch?v=SPjvGKNdMpo" />
-          </div>
+      <section className="flex flex-col items-center justify-end bg-[var(--main-background-4)] h-dvh pb-10">
+        <div className="z-10 mt-2 mb-6 sm:mt-4 font-black text-2xl sm:text-4xl text-[var(--main-font-color-1)] text-center">
+          {`I always consider`}
+          <br />
+          {`UserFlow, Creative,`}
+          <br />
+          {`Cutting-Edge Technology`}
+        </div>
+        <div className="w-3/4 max-w-2xl h-1/2 shadow-xl overflow-hidden rounded-2xl">
+          <ReactPlayer width={'100%'} height={'100%'} controls={true} url="https://www.youtube.com/watch?v=SPjvGKNdMpo" />
         </div>
       </section>
     </main>
