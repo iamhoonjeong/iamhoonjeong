@@ -17,8 +17,8 @@ const config: Config = {
         'main-section': 'calc(1rem + 6dvw)',
       },
       height: {
-        sectionFirstSectionDesktop: 'calc(100vh - 5rem)',
-        sectionFirstSectionMobile: 'calc(100vh - 4rem)',
+        sectionFirstSectionDesktop: 'calc(100dvh - 5rem)',
+        sectionFirstSectionMobile: 'calc(100dvh - 4rem)',
       },
       animation: {
         mainIntroduceInfiniteSlide: 'mainInfiniteSlide 15s linear infinite',
@@ -27,12 +27,11 @@ const config: Config = {
         mainFadeOut: 'mainFadeOut 1.5s ease-in-out forwards',
         headerIntroMoving: 'headerMoving 3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         headerIntroFadeIn: 'headerFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-
         sectionsShaking: 'sectionShaking 5s ease-in-out infinite',
       },
       keyframes: {
         mainInfiniteSlide: {
-          '0%': { transform: `translateX(110vh)` },
+          '0%': { transform: `translateX(110dvh)` },
           '100%': { transform: `translateX(-100%)` },
         },
         mainSectionSlide: {
@@ -61,6 +60,10 @@ const config: Config = {
           '100%': { transform: 'translateX(0%)' },
         },
         headerFadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        opacity: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },

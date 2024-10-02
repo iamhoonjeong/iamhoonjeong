@@ -28,9 +28,9 @@ export default function About() {
     });
   }, []);
   return (
-    <main className="animate-headerIntroFadeIn">
+    <main className="overflow-hidden animate-headerIntroFadeIn">
       <Header order={2} title="ABOUT ME" />
-      <section className="w-full overflow-hidden flex flex-col items-center bg-[var(--main-background-3)] h-sectionFirstSectionMobile sm:h-sectionFirstSectionDesktop">
+      <section className="w-full flex flex-col items-center bg-[var(--main-background-3)] h-sectionFirstSectionMobile sm:h-sectionFirstSectionDesktop">
         <div className="mt-8 sm:mt-6 flex z-10">
           <Link href={'https://www.linkedin.com/in/iamhoonjeong/'} rel="noopener noreferrer" target="_blank">
             <Image className="w-10 mr-3" src="/logo-linkedin.svg" width={0} height={0} alt="LOGO HOON JEONG" />
@@ -62,7 +62,7 @@ export default function About() {
         <div
           ref={circleRef}
           style={{ top: circleMargin, width: '75dvw', height: '75dvw', maxWidth: '400px', maxHeight: '400px' }}
-          className="absolute flex top-0 rounded-full bg-[var(--main-background-4)]"
+          className="overflow-hidden absolute flex top-0 rounded-full bg-[var(--main-background-4)]"
         >
           <Image
             ref={imageRef}
@@ -82,7 +82,7 @@ export default function About() {
           />
         </div>
       </section>
-      <section style={{ height: '100vh' }} className="flex flex-col items-center justify-center bg-[var(--main-background-4)]">
+      <section className="flex flex-col items-center justify-center bg-[var(--main-background-4)] h-dvh">
         <div className="z-10">
           <div className="z-10 mt-2 mb-6 sm:mt-4 font-black text-2xl sm:text-4xl text-[var(--main-font-color-1)] text-center">
             {`I always consider`}
