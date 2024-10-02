@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
   const [pathForFunction, setPathForFunction] = useState('');
 
-  function handleLinkClick(path: string) {
+  function onClickCategory(path: string) {
     if (pathForFunction !== '') return;
     setPathForFunction(path);
 
@@ -21,54 +21,54 @@ export default function Home() {
   }
 
   return (
-    <main className={`overflow-hidden flex h-full ${pathForFunction ? `animate-mainFadeOut` : null}`}>
-      <div className="flex flex-col justify-center items-center w-1/4 h-full bg-[var(--main-background-1)]">
+    <main className={`overflow-hidden flex h-full ${pathForFunction ? `animate-fadeOut` : null}`}>
+      <div className="w-1/4 h-full flex flex-col justify-center items-center bg-category1">
         <div
-          style={{ width: '100vh' }}
-          className="overflow-hidden flex relative pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-1)]"
+          style={{ width: '100dvh' }}
+          className="flex relative rotate-90 font-black text-categoryTitle text-category1 pointer-events-none whitespace-nowrap"
         >
-          <div className="flex animate-mainIntroduceInfiniteSlide will-change-transform">
-            <div className="mr-8 -rotate-90">{`🏄`}</div>
-            <div className="mr-8">{`Hi, This is `}</div>
-            <div className="mr-8 animate-[opacity_1s_linear_infinite]">{`Hoon.`}</div>
-            <div className="mr-8 -rotate-90">{`😎`}</div>
-            <div className="mr-8">{`Feel free to reach out to me.`}</div>
-            <div className="mr-8 -rotate-90">{`💕`}</div>
+          <div className="flex animate-infiniteSlide will-change-transform">
+            <div className="mr-4 sm:mr-8 -rotate-90">🏄</div>
+            <div className="mr-4 sm:mr-8">Hi, This is </div>
+            <div className="mr-4 sm:mr-8 animate-[fadeIn_1s_linear_infinite]">Hoon.</div>
+            <div className="mr-4 sm:mr-8 -rotate-90">😎</div>
+            <div className="mr-4 sm:mr-8">Feel free to reach out to me.</div>
+            <div className="mr-4 sm:mr-8 -rotate-90">💕</div>
           </div>
         </div>
       </div>
       <div
-        onClick={() => handleLinkClick('/about-me')}
-        className="w-1/4 h-full flex justify-center items-center *:cursor-pointer bg-[var(--main-background-2)] cursor-pointer"
+        onClick={() => onClickCategory('/about-me')}
+        className="w-1/4 h-full flex justify-center items-center bg-category2 cursor-pointer"
       >
         <div
           className={`${
-            pathForFunction === '/about-me' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
-          } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-2)]`}
+            pathForFunction === '/about-me' ? `animate-categorySliding` : `animate-categoryShaking`
+          } font-black text-categoryTitle text-category2 whitespace-nowrap rotate-90`}
         >
           ABOUT ME
         </div>
       </div>
       <div
-        onClick={() => handleLinkClick('/career')}
-        className="w-1/4 h-full flex justify-center items-center *:cursor-pointer bg-[var(--main-background-3)] cursor-pointer"
+        onClick={() => onClickCategory('/career')}
+        className="w-1/4 h-full flex justify-center items-center bg-category3 cursor-pointer"
       >
         <div
           className={`${
-            pathForFunction === '/career' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
-          } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-3)]`}
+            pathForFunction === '/career' ? `animate-categorySliding` : `animate-categoryShaking`
+          } font-black text-categoryTitle text-category3 whitespace-nowrap rotate-90`}
         >
           CAREER
         </div>
       </div>
       <div
-        onClick={() => handleLinkClick('/blog')}
-        className="w-1/4 h-full flex justify-center items-center *:cursor-pointer bg-[var(--main-background-4)] cursor-pointer"
+        onClick={() => onClickCategory('/blog')}
+        className="w-1/4 h-full flex justify-center items-center bg-category4 cursor-pointer"
       >
         <div
           className={`${
-            pathForFunction === '/blog' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
-          } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-4)]`}
+            pathForFunction === '/blog' ? `animate-categorySliding` : `animate-categoryShaking`
+          } font-black text-categoryTitle text-category4 whitespace-nowrap rotate-90`}
         >
           BLOG
         </div>

@@ -1,15 +1,11 @@
 interface Props {
-  order: number;
+  categoryOrder: string;
   title: string;
 }
-export default function Header({ order, title }: Props) {
+export default function Header({ categoryOrder, title }: Props) {
   return (
-    <header
-      className={`animate-headerIntroFadeIn overflow-x-hidden h-16 sm:h-20 flex justify-center items-center bg-[var(--main-background-${order})]`}
-    >
-      <div className={`animate-headerIntroMoving font-black text-2xl sm:text-4xl text-[var(--main-font-color-${order})]`}>
-        {title}
-      </div>
+    <header className={`h-16 sm:h-20 flex justify-center items-center bg-${categoryOrder} overflow-hidden`}>
+      <div className={`text-2xl sm:text-4xl font-black text-${categoryOrder} animate-headerTitleSliding`}>{title}</div>
     </header>
   );
 }
