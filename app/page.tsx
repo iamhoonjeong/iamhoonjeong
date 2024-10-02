@@ -1,45 +1,16 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { detectMobile } from '@/src/lib/detectMobile';
 
 export default function Home() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const router = useRouter();
-  const [link, setLink] = useState('');
-
-  function draw() {
-    if (!canvasRef.current) return;
-    const context = canvasRef.current.getContext('2d');
-    if (!context) throw Error('There is no canvas context');
-
-    context.beginPath();
-    context.arc(300, 100, 50, 0, 2 * Math.PI);
-    context.stroke();
-    context.closePath();
-    context.moveTo(100, 500);
-    /* context.fillStyle = `rgb(255, 255, 0)`;
-    context.font = '100px __Montserrat_608f29';
-    context.fillText('BLOG', 100, 500); */
-  }
-
-  function resizeCanvas() {
-    if (!canvasRef.current) return;
-    const context = canvasRef.current.getContext('2d');
-    if (!context) throw Error('There is no canvas context');
-    const rect = canvasRef.current.getBoundingClientRect();
-
-    canvasRef.current.width = rect.width * window.devicePixelRatio;
-    canvasRef.current.height = rect.height * window.devicePixelRatio;
-    context?.scale(window.devicePixelRatio, window.devicePixelRatio);
-
-    draw();
-  }
+  const [pathForFunction, setPathForFunction] = useState('');
 
   function handleLinkClick(path: string) {
-    if (link !== '') return;
+    if (pathForFunction !== '') return;
+    setPathForFunction(path);
 
-    setLink(path);
     if (detectMobile()) {
       router.push(path);
     } else {
@@ -49,17 +20,8 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-    };
-  }, []);
-
   return (
-    <main className={`overflow-hidden flex h-full ${link ? `animate-mainFadeOut` : null}`}>
-      {/* <canvas ref={canvasRef} id="canvas" className="pointer-events-none w-full h-full absolute top-0 left-0 z-10"></canvas> */}
+    <main className={`overflow-hidden flex h-full ${pathForFunction ? `animate-mainFadeOut` : null}`}>
       <div className="flex flex-col justify-center items-center w-1/4 h-full bg-[var(--main-background-1)]">
         <div
           style={{ width: '100vh' }}
@@ -81,7 +43,7 @@ export default function Home() {
       >
         <div
           className={`${
-            link === '/about-me' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
+            pathForFunction === '/about-me' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
           } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-2)]`}
         >
           ABOUT ME
@@ -93,7 +55,7 @@ export default function Home() {
       >
         <div
           className={`${
-            link === '/career' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
+            pathForFunction === '/career' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
           } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-3)]`}
         >
           CAREER
@@ -105,7 +67,7 @@ export default function Home() {
       >
         <div
           className={`${
-            link === '/blog' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
+            pathForFunction === '/blog' ? `animate-mainSectionSlide` : `animate-mainSectionsShaking`
           } pointer-events-none whitespace-nowrap rotate-90 font-black text-main-section text-[var(--main-font-color-4)]`}
         >
           BLOG
