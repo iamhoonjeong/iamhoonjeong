@@ -32,7 +32,7 @@ export default function AboutMe() {
   return (
     <main className="overflow-hidden animate-fadeIn text-center">
       <Header categoryOrder="category2" title="ABOUT ME" />
-      <section className="w-full flex flex-col items-center bg-category3 pt-6 pb-6 sm:pb-10 overflow-hidden">
+      <section className="w-full flex flex-col items-center bg-category3 pt-6 pb-16 sm:pb-24 overflow-hidden">
         <div className="flex z-10">
           <Link href={'https://www.linkedin.com/in/iamhoonjeong/'} rel="noopener noreferrer" target="_blank">
             <Image className="w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
@@ -88,14 +88,14 @@ export default function AboutMe() {
             alt="text image 2 inside circle"
           />
         </div>
-        <div className="text-2xl sm:text-4xl font-black text-category1 mt-2 sm:mt-4 z-10">
+        <div className="text-2xl sm:text-4xl font-black text-category1 mt-4 sm:mt-6 z-10">
           <div>{`I always consider`}</div>
           <div>{`UserFlow, Creative,`}</div>
           <div>{`Cutting-Edge Technology`}</div>
         </div>
         <div
           style={{ width: '80dvw', height: '80dvw', maxWidth: '800px', maxHeight: '460px' }}
-          className="relative mt-2 sm:mt-4 z-10"
+          className="relative mt-6 sm:mt-8 z-10"
         >
           <Image
             style={{ width: '100px', height: '100px', left: '-50px', top: '-50px' }}
