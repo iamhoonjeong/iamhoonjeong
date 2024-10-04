@@ -6,7 +6,7 @@ const notoSans = Montserrat({
   style: 'normal',
   subsets: ['latin'],
   variable: '--font-noto-sans',
-  weight: ['300', '900'],
+  weight: ['300', '500', '700', '900'],
 });
 
 export const metadata: Metadata = {
