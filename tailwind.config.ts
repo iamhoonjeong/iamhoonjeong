@@ -40,8 +40,8 @@ const config: Config = {
 
       animation: {
         infiniteSlide: 'infiniteSlide 15s linear infinite',
-        categoryShaking: 'shaking 15s ease-in-out infinite',
         categorySliding: 'sliding 1.5s ease-in-out forwards',
+        categorySectionSliding: 'sectionSliding 2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         fadeOut: 'fadeOut 1.5s ease-in-out forwards',
         fadeIn: 'fadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         headerTitleSliding: 'headerTitleSliding 2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
@@ -53,16 +53,14 @@ const config: Config = {
           '0%': { transform: `translateX(110dvh)` },
           '100%': { transform: `translateX(-100%)` },
         },
-        shaking: {
-          '0%': { transform: 'rotate(90deg)' },
-          '2%': { transform: 'rotate(95deg)' },
-          '4%': { transform: 'rotate(85deg)' },
-          '6%': { transform: 'rotate(90deg)' },
-        },
         sliding: {
           '0%': { transform: 'rotate(90deg)' },
           '20%': { transform: 'rotate(90deg) translateX(100px)' },
           '100%': { transform: 'rotate(90deg) translateX(-3000px)' },
+        },
+        sectionSliding: {
+          '0%': { transform: 'rotate(90deg) translateX(1000px)' },
+          '100%': { transform: 'rotate(90deg) translateX(0)' },
         },
         fadeOut: {
           '65%': { opacity: '1' },

@@ -49,7 +49,7 @@ export default function Home() {
       >
         <div
           className={`${
-            pathForFunction === '/about-me' ? `animate-categorySliding` : `animate-categoryShaking`
+            pathForFunction === '/about-me' && !isMobile ? `animate-categorySliding` : `animate-categorySectionSliding`
           } font-black text-categoryTitle text-category2 whitespace-nowrap rotate-90`}
         >
           ABOUT ME
@@ -61,7 +61,7 @@ export default function Home() {
       >
         <div
           className={`${
-            pathForFunction === '/career' ? `animate-categorySliding` : `animate-categoryShaking`
+            pathForFunction === '/career' && !isMobile ? `animate-categorySliding` : `animate-categorySectionSliding`
           } font-black text-categoryTitle text-category3 whitespace-nowrap rotate-90`}
         >
           CAREER
@@ -73,7 +73,7 @@ export default function Home() {
       >
         <div
           className={`${
-            pathForFunction === '/blog' ? `animate-categorySliding` : `animate-categoryShaking`
+            pathForFunction === '/blog' && !isMobile ? `animate-categorySliding` : `animate-categorySectionSliding`
           } font-black text-categoryTitle text-category4 whitespace-nowrap rotate-90`}
         >
           BLOG
