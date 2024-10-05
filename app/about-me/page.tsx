@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ReactPlayer from 'react-player';
-
 import Header from '@/src/ui/Header';
 
 export default function AboutMe() {

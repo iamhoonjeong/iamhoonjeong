@@ -1,7 +1,7 @@
-import CareerHistody from '@/src/ui/CareerHistory';
-import Header from '@/src/ui/Header';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import Header from '@/src/ui/Header';
+import CareerHistody from '@/src/ui/CareerHistory';
 
 export default function Career() {
   const history = [
@@ -12,6 +12,7 @@ export default function Career() {
       location: 'Vancouver, Canada',
       whatIDid: [
         `Developed a JavaScript library using TensorFlow machine learning models to enable web page interaction through camera-detected eye blinks and hand gestures. This library allows individuals with disabilities to control web pages without physical interaction.`,
+        `Developed and distributed the English vocabulary app WordPeanut using React Native. Available on both the App Store and Google Play.`,
       ],
     },
     {
