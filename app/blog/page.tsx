@@ -14,7 +14,7 @@ export default function Blog() {
           <Image className="w-10" src="/images/icon-mail.svg" width={0} height={0} alt="email icon" />
         </Link>
       </div>
-      {process.env.NODE_ENV === 'development' && (
+      {process.env.NODE_ENV !== 'development' && (
         <div className="h-full bg-category1">
           {new Array(10).fill('a').map((a, i) => {
             return (
