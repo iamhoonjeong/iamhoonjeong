@@ -34,10 +34,10 @@ export default function AboutMe() {
       <section className="w-full flex flex-col items-center bg-category3 pt-6 pb-16 sm:pb-24 overflow-hidden">
         <div className="flex z-10">
           <Link href={'https://www.linkedin.com/in/iamhoonjeong/'} rel="noopener noreferrer" target="_blank">
-            <Image className="w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
+            <Image className="w-8 sm:w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
           </Link>
           <Link href={'mailto:iamhoonjeong@gmail.com'}>
-            <Image className="w-10" src="/images/icon-mail.svg" width={0} height={0} alt="email icon" />
+            <Image className="w-8 sm:w-10" src="/images/icon-mail.svg" width={0} height={0} alt="email icon" />
           </Link>
         </div>
         <div className="text-2xl sm:text-4xl text-category2 font-black mt-4 sm:mt-6 z-10">Hi, This is</div>

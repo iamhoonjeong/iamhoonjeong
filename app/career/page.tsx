@@ -52,10 +52,10 @@ export default function Career() {
       <Header categoryOrder="category3" title="CAREER" />
       <div className="flex justify-center bg-category4 pt-6">
         <Link href={'https://www.linkedin.com/in/iamhoonjeong/'} rel="noopener noreferrer" target="_blank">
-          <Image className="w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
+          <Image className="w-8 sm:w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
         </Link>
         <Link href={'mailto:iamhoonjeong@gmail.com'}>
-          <Image className="w-10" src="/images/icon-mail.svg" width={0} height={0} alt="email icon" />
+          <Image className="w-8 sm:w-10" src="/images/icon-mail.svg" width={0} height={0} alt="email icon" />
         </Link>
       </div>
       <section className="w-full flex flex-col items-center bg-category4 pb-16 sm:pb-24 overflow-hidden">

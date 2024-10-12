@@ -8,13 +8,13 @@ export default function Blog() {
       <Header categoryOrder="category4" title="BLOG" />
       <div className="flex justify-center bg-category1 pt-6">
         <Link href={'https://www.linkedin.com/in/iamhoonjeong/'} rel="noopener noreferrer" target="_blank">
-          <Image className="w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
+          <Image className="w-8 sm:w-10 mr-3" src="/images/icon-linkedin.svg" width={0} height={0} alt="linkedin icon" />
         </Link>
         <Link href={'mailto:iamhoonjeong@gmail.com'}>
-          <Image className="w-10" src="/images/icon-mail.svg" width={0} height={0} alt="email icon" />
+          <Image className="w-8 sm:w-10" src="/images/icon-mail.svg" width={0} height={0} alt="email icon" />
         </Link>
       </div>
-      {process.env.NODE_ENV !== 'development' && (
+      {process.env.NODE_ENV === 'development' && (
         <div className="h-full bg-category1">
           {new Array(10).fill('a').map((a, i) => {
             return (
@@ -22,7 +22,7 @@ export default function Blog() {
                 <Link href={'/blog/create-canvas'}>
                   <div
                     style={{ width: '80dvw', maxWidth: '800px' }}
-                    className="text-white text-left mt-4 pb-4 sm:mt-6 sm:pb-6 border-b text-2xl sm:text-4xl text-category1 font-black"
+                    className="text-white hover:text-category4 text-left mt-4 pb-4 sm:mt-6 sm:pb-6 border-b text-2xl sm:text-4xl font-black"
                   >
                     How to Create Canvas how many particels put in the canvas?
                   </div>
@@ -32,7 +32,7 @@ export default function Blog() {
           })}
         </div>
       )}
-      <div className="h-full flex justify-center bg-category1 pt-6 text-4xl text-category1 font-black">UNDER CONSTRUNTION</div>
+      <div className="h-full flex justify-center bg-category1 pt-6 text-4xl text-category4 font-black">UNDER CONSTRUNTION</div>
     </main>
   );
 }
